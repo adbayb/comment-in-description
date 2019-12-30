@@ -1,0 +1,32 @@
+{
+  "name": "@adbayb/comment-in-description",
+  "private": true,
+  "scripts": {
+    "build": "ncc build src/index.ts",
+    "format": "prettier '**/*.{js,json,ts}' --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adbayb/actions.git"
+  },
+  "keywords": [
+    "github",
+    "actions"
+  ],
+  "author": "Ayoub Adib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adbayb/actions/issues"
+  },
+  "homepage": "https://github.com/adbayb/actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^2.0.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.4"
+  }
+}

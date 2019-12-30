@@ -1,0 +1,15 @@
+name: "comment"
+description: "Add a comment section inside a pull request description"
+inputs:
+  message:
+    description: "Content of the comment section"
+    required: true
+  label:
+    description: "Label of the comment section (serves also as an identifier to track comment updates)"
+    required: true
+  token:
+    description: "GITHUB_TOKEN"
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"

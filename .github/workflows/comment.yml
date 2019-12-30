@@ -1,0 +1,21 @@
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Comment action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Comment
+        uses: ./comment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: "Label1"
+          message: "Description1"
+      - name: Another comment
+        uses: ./comment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: "Label2"
+          message: "Description2\n\nMultilineTest"
