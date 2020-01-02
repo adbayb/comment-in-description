@@ -1,4 +1,4 @@
-name: "comment"
+name: "comment-in-description"
 description: "Add a comment section inside a pull request description"
 inputs:
   message:

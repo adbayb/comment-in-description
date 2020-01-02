@@ -1,8 +1,10 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
 
+const DELIMETER = "<span class='actions/comment-in-description' hidden />";
+
 const getActionDescription = (label: string, message: string) => {
-	return `\n\n## ${label}\n\n${message}\n\n---`;
+	return `\n\n## ${label}\n\n${message}\n\n${DELIMETER}`;
 };
 
 const getEditedDescription = (prDescription?: string) => {
@@ -27,7 +29,7 @@ const getEditedDescription = (prDescription?: string) => {
 
 	// @section: edit existing section comment
 	return prDescription.replace(
-		new RegExp(`(?:^|\n+)## ${label}.*?---`, "s"),
+		new RegExp(`(?:^|\n+)## ${label}.*?${DELIMETER}`, "s"),
 		body
 	);
 };

@@ -3803,8 +3803,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
 const github = __importStar(__webpack_require__(469));
+const DELIMETER = "<span class='actions/comment-in-description' hidden />";
 const getActionDescription = (label, message) => {
-    return `\n\n## ${label}\n\n${message}\n\n---`;
+    return `\n\n## ${label}\n\n${message}\n\n${DELIMETER}`;
 };
 const getEditedDescription = (prDescription) => {
     const label = core.getInput("label");
@@ -3822,7 +3823,7 @@ const getEditedDescription = (prDescription) => {
         return `${prDescription}${body}`;
     }
     // @section: edit existing section comment
-    return prDescription.replace(new RegExp(`(?:^|\n+)## ${label}.*?---`, "s"), body);
+    return prDescription.replace(new RegExp(`(?:^|\n+)## ${label}.*?${DELIMETER}`, "s"), body);
 };
 try {
     const { context, context: { payload } } = github;
